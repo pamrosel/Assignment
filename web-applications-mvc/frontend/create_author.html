@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Brisk Publishing</title>
+        <script src="js/create_author.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="/author_list.html" class="button">← Back to Authors</a>
+        <header id="header">
+        </header>
+         <main>
+            <section>
+                <form id="create-author-form">
+                    <h3>Add Author</h3>
+                    <ul>
+                        <li>
+                            <label for="name">First Name:</label>
+                            <input type="text" id="name" name="name" pattern="^([a-zA-Z'-]){2,30}$" required>
+                        </li>
+                        <li>
+                            <label for="surname">Surname:</label>
+                            <input type="text" id="surname" name="surname" pattern="^([a-zA-Z'-]){2,30}$" required>
+                        </li>
+                        <li>
+                            <label for="nationality">Nationality:</label>
+                            <input type="text" id="nationality" name="nationality" pattern="(^[\S])[a-zA-Z]{1,30}" required>
+                        </li>
+                        <li>
+                            <label for="birthYear">Birth Year:</label>
+                            <input type="text" id="birthYear" name="birthYear" pattern="[0-9]{4}" max="2100" required>
+                        </li>
+                        <li>
+                            <label for="deathYear">Death Year:</label>
+                            <input type="text" id="deathYear" name="deathYear" pattern="[0-9]{1,4}" max="2100" required>
+                        </li>
+                        <li id="validation-error">
+                            <h4>* Red lines indicate required fields or invalid data</h4>
+                        </li>
+                    </ul>
+                    <input type="button" value="Add Author" onclick="validate()">
+                </form>
+            </section>
+         </main>
+    </body>
+</html>
+      

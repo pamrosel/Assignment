@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Brisk Publishing</title>
+        <script src="js/create_book.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="/book_list.html" class="button">← Back to Books</a>
+        <header id="header">
+        </header>
+         <main>
+            <section>
+                <form id="create-book-form">
+                    <h3>Add Book</h3>
+                    <ul>
+                        <li>
+                            <label for="bookTitle">Book Title:</label>
+                            <input type="text" id="bookTitle" name="bookTitle" pattern="(^[\S])[a-zA-Z0-9 .,;:!()?/']+" maxlength="255" required>
+                        </li>
+                        <li>
+                            <label for="originalTitle">Original Title:</label>
+                            <input type="text" id="originalTitle" name="originalTitle" pattern="(^[\S])[a-zA-Z0-9 .,;:!()?/']+" maxlength="255">
+                        </li>
+                        <li>
+                            <label for="yearofPublication">Year Published:</label>
+                            <input type="number" id="yearofPublication" name="yearofPublication" pattern="[0-9]{4}" max="2100" required>
+                        </li>
+                        <li>
+                            <label for="genre">Genre:</label>
+                            <input type="text" id="genre" name="genre" maxlength="30" pattern="(^[\S])[a-zA-Z ,/]+" required>
+                        </li>
+                        <li>
+                            <label for="millionsSold">Millions Sold:</label>
+                            <input type="number" id="millionsSold" name="millionsSold" pattern="[0-9]+" required>
+                        </li>
+                        <li>
+                            <label for="languageWritten">Language:</label>
+                            <input type="text" id="languageWritten" name="languageWritten" pattern="(^[\S])[a-zA-Z]{1,30}" required>
+                        </li>
+                        <li>
+                            <label for="authorSelect">Author Name:</label>
+                            <select id="authorSelect" name="authorSelect" onchange="changeAuthor()" required></select>
+                        </li>
+                        <li>
+                            <label for="authorID">Author ID:</label>
+                            <input type="text" id="authorID" name="authorID" readonly>
+                        </li>
+                        <li>
+                            <div class="cover-holder">
+                                <img id="currentCoverImage" src="" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <label for="coverSelect">Cover File:</label>
+                            <select id="coverSelect" name="coverSelect" onchange="changeCover()" ></select>
+                        </li>
+                        <li>
+                            <details>
+                                <summary>OR Add new cover image file (not from database):</summary>
+                                <input type="text" id="coverImagePath" name="coverImagePath" onchange="newCover()" pattern="(^[\S])[a-zA-Z0-9._-]+" maxlength="255" required>
+                            </details>
+                        </li>
+                        <li id="validation-error">
+                            <h4>* Red lines indicate required fields or invalid data</h4>
+                        </li>
+                    </ul>
+                    <input type="button" value="Add Book" onclick="validate()">
+                </form>
+            </section> 
+         </main>
+    </body>
+</html>
+      

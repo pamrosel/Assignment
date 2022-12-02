@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Brisk Publishing</title>
+        <script src="js/update_user.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="http://localhost:8081/list_users.html" class="button">← Back to Users</a>
+        <header id="header">
+        </header>
+         <main>
+            <section>
+                <form id="update-user-form">
+                    <h3>Update User Account</h3>
+                    <ul>
+                        <li>
+                            <label for="UserID">User ID:</label>
+                            <input type="text" id="UserID" name="UserID" readonly>
+                        </li>
+                        <li>
+                            <label for="firstname">First Name:</label>
+                            <input type="text" id="firstName" name="firstName" pattern="^([a-zA-Z'-]){2,200}$" required>
+                        </li>
+                        <li>
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" id="lastName" name="lastName" pattern="^([a-zA-Z'-]){2,200}$" required>
+                        </li>
+                        <li>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$" required>
+                        </li>
+                        <li>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" pattern="^([a-zA-Z'-]){2,200}$" required>
+                        </li>
+                        <li>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" pattern="^((?=\S*?[A-Za-z])(?=\S*?[0-9]).{4,})\S$" maxlength="255" required>
+                        </li>
+                        <li>
+                            <label for="accessRights">Access Rights:</label>
+                            <select type="text" id="accessRights" name="accessRights">
+                                <option value="">Choose...</option>
+                                <option value="staff">staff</option>
+                                <option value="admin">admin</option>
+                            </select>
+                        </li>
+                        <li id="validation-error">
+                            <h4>* Red lines indicate required fields or invalid data</h4>
+                        </li>
+                    </ul>
+                    <input type="button" value="Update User" onclick="validate()">
+                </form>
+            </section>
+         </main>
+    </body>
+</html>
+      
